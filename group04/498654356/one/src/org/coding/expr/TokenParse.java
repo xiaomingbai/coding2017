@@ -36,6 +36,8 @@ public class TokenParse {
 				
 				Token token = new Token(TypeEnum.NUMBER, builder.toString());
 				tokens.add(token);
+			} else if(Character.isWhitespace(ch)) {	//空白字符处理
+				index++;
 			} else {
 				throw new RuntimeException("unkonw char: ");
 			}

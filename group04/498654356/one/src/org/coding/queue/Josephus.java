@@ -17,7 +17,25 @@ public class Josephus {
             queue.enQueue(i);
         }
         List<Integer> result = new ArrayList<Integer>();
-        int index = 1;
+        int index = 0;
+        while (!queue.isEmpty()) {
+        	Integer item = queue.deQueue();
+        	if (++index % m == 0) {	//通过 % 实现报数的循环
+        		result.add(item);
+        	} else {
+        		queue.enQueue(item);	//将其放入队列，继续报数
+        	}
+        }
+        return result;
+    }
+    
+    public static List<Integer> execute1(int n, int m){
+        CircleQueue<Integer> queue = new CircleQueue<>(n);
+        for (int i = 0; i < n; i++) {
+            queue.enQueue(i);
+        }
+        List<Integer> result = new ArrayList<Integer>();
+        int index = 1;	//报数
         doExecute(new CircleQueue<>(n), m, queue, result, index);
         return result;
     }

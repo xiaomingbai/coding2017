@@ -17,8 +17,9 @@ public class InfixExpr {
 		TokenParser parser = new TokenParser();
 		List<Token> tokens = parser.parse(this.expr);
 		
-		
+		//存放操作符栈
 		Stack<Token> opStack = new Stack<>();
+		//操作数据值栈
 		Stack<Float> numStack = new Stack<>();
 		
 		for(Token token : tokens){

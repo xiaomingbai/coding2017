@@ -10,11 +10,9 @@ public class TokenParser {
 		List<Token> tokens = new ArrayList<>();
 
 		int i = 0;
-
 		while (i < expr.length()) {
-
+			
 			char c = expr.charAt(i);
-
 			if (isOperator(c)) {
 
 				Token t = new Token(Token.OPERATOR, String.valueOf(c));
@@ -22,7 +20,6 @@ public class TokenParser {
 				i++;
 
 			} else if (Character.isDigit(c)) {
-
 				int nextOperatorIndex = indexOfNextOperator(i, expr);
 				String value = expr.substring(i, nextOperatorIndex);
 				Token t = new Token(Token.NUMBER, value);

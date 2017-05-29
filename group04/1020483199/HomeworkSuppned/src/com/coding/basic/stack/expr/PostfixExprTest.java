@@ -22,7 +22,7 @@ public class PostfixExprTest {
 	@Test
 	public void testEvaluate() {
 		{
-			PostfixExpr expr = new PostfixExpr("6 5 2 3 + 8 * + 3 + *");
+			PostfixExpr expr = new PostfixExpr("6 5 2 3 + 8 * + 3 + * ");
 			Assert.assertEquals(288, expr.evaluate(),0.0f);
 		}
 		{

@@ -17,6 +17,7 @@ String expr = null;
 		
 		Stack<Float> numStack = new Stack<>();
 		for(Token token : tokens){
+			System.out.println(token+"----");
 			if(token.isNumber()){
 				numStack.push(new Float(token.getIntValue()));
 			} else{

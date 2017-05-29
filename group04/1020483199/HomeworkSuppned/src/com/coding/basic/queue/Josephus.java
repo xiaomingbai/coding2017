@@ -21,7 +21,7 @@ public class Josephus {
         List<Integer> result = new ArrayList<Integer>();
         int i = 0;
 
-        while (!queue.isEmpty()) {
+        while (!queue.isEmpty() && queue.size() > 1) {
 
             int x = queue.deQueue();            
 
@@ -32,7 +32,7 @@ public class Josephus {
             }
         }
 
-        
+        System.out.println(result);
         return result;
 	}
 	

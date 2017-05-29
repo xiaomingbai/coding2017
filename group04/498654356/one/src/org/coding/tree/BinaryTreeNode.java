@@ -1,5 +1,7 @@
 package org.coding.tree;
-
+/**
+ * 二叉树的每个节点最多只能有2个子节点
+ */
 public class BinaryTreeNode<T extends Comparable<T>> {
     
     private T data;

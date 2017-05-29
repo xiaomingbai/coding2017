@@ -9,10 +9,7 @@ public class FileList {
 	}
 
 	private void doList(File f, int count) {
-		for(int i = 0; i < count; i++) {
-			System.out.print("\t");
-		}
-		System.out.println(f.getName());
+		printFormat(f, count);
 		if (f.isDirectory()) {
 			File[] files = f.listFiles();
 			count++;
@@ -20,5 +17,12 @@ public class FileList {
 				doList(file, count);
 			}
 		}
+	}
+
+	private void printFormat(File f, int count) {
+		for(int i = 0; i < count; i++) {
+			System.out.print("\t");
+		}
+		System.out.println(f.getName());
 	}
 }
